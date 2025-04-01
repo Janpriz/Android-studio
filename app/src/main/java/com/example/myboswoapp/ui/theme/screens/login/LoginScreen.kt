@@ -54,7 +54,7 @@ fun Login_screen(modifier: Modifier = Modifier) {
             value = email,
             onValueChange = { email = it },
             label = { Text(text = "Enter Email") },
-            leadingIcon = { Icons.Default.Email },
+            leadingIcon = { Icon(Icons.Default.Email, contentDescription ="emailIcon") },
             modifier = Modifier
                 .width(300.dp)
                 .padding(8.dp),
