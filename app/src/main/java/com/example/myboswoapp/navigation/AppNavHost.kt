@@ -21,10 +21,10 @@ fun AppNavHost(modifier: Modifier = Modifier,
             Homescreen(navController)
         }
         composable(ROUTE_REGISTER){
-            Registration_Screen()
+            Registration_Screen (navController)
         }
         composable(ROUTE_LOGIN){
-            Login_screen()
+            Login_screen(navController)
         }
 
     }
