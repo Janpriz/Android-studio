@@ -1,6 +1,7 @@
 package com.example.myboswoapp.ui.theme.screens.registration
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -34,6 +35,8 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.myboswoapp.navigation.ROUTE_LOGIN
+import com.example.myboswoapp.navigation.ROUTE_REGISTER
 
 @Composable
 fun Registration_Screen(navController: NavHostController){
@@ -49,6 +52,7 @@ fun Registration_Screen(navController: NavHostController){
             .fillMaxSize()
             .background(Color.White),
     ){
+        Spacer( modifier = Modifier.height(50.dp))
         Text(
             text = "Registration",
             color = Color.Red,
@@ -91,7 +95,7 @@ fun Registration_Screen(navController: NavHostController){
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text(text = "Enter Email") },
+            label = { Text(text = "Enter password") },
             leadingIcon = { Icon(Icons.Default.Lock, contentDescription ="PasswordIcon") },
             modifier = Modifier
                 .width(300.dp)
@@ -111,16 +115,29 @@ fun Registration_Screen(navController: NavHostController){
             shape = RoundedCornerShape(20.dp)
         )
         Button(
-            onClick = {/*TODO*/ },
+            onClick = {navController.navigate(ROUTE_LOGIN) },
             modifier = Modifier.width(150.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Blue))
         {
             Text(
                 text = "Register",
-                fontFamily = FontFamily.Cursive,
+                fontFamily = FontFamily.SansSerif,
                 fontSize = 25.sp,
+
             )
+
         }
+        Spacer( modifier = Modifier.height(20.dp))
+        Text(
+            color = Color.Blue,
+            text = "You have an account? Click here to LOGIN.",
+            fontFamily = FontFamily.Serif,
+            fontSize = 11.sp,
+            modifier = Modifier
+                .clickable {
+                    navController.navigate(ROUTE_LOGIN)
+                }
+        )
 
     }
 
