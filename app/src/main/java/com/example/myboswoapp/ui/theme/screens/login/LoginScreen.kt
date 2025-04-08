@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.myboswoapp.navigation.ROUTE_DASHBOARD
 import com.example.myboswoapp.navigation.ROUTE_LOGIN
 import com.example.myboswoapp.navigation.ROUTE_REGISTER
 
@@ -80,7 +81,7 @@ fun Login_screen(navController: NavHostController) {
         )
         Spacer(modifier = Modifier.height(20.dp))
         Button(
-            onClick = { },
+            onClick = { navController.navigate(ROUTE_DASHBOARD)},
             modifier = Modifier.width(150.dp)
         ) {
             Text(
